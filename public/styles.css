@@ -1,0 +1,98 @@
+html,
+body {
+    height: 100%;
+}
+
+html {
+    font-size: 62.5%;
+    line-height: 1.4;
+    font-family: Helvetica, sans-serif;
+}
+
+body {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto 2fr;
+    grid-template-areas:
+    "header header header"
+    "add-quotes update-quote delete-quote"
+    "quotes quotes quotes";
+    gap: 2rem;
+    margin: 0;
+    padding: 1rem;
+    background-color: #1F1F1F;
+    background-image: linear-gradient(45deg, #090707, #E53A40);
+    background-attachment: fixed;
+    background-size: cover;
+    font-size: 2rem;
+    color: #f2f2f2;
+}
+
+.header {
+    grid-area: header;
+    text-align: center;
+}
+
+.add-quotes {
+    grid-area: add-quotes;
+}
+
+.add-quotes form input {
+    display: flex;
+    width: 30rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: rgba(0, 0, 0, 0.5);
+    margin-top: 0.5rem;
+}
+
+.update-quotes {
+    grid-area: update-quote;
+}
+
+.delete-quotes {
+    grid-area: delete-quote;
+}
+
+.quotes-section {
+    grid-area: quotes;
+    overflow-y: scroll;
+}
+
+.main {
+    background-color: #1F1F1F;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+}
+
+h1,
+h2 {
+    margin: 0;
+}
+
+button {
+    padding: 0.5rem;
+    background: #E53A40;
+    border-radius: 0.5rem;
+    border: none;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    body {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "header"
+            "add-quotes"
+            "update-quote"
+            "delete-quote"
+            "quotes";
+    }
+    .quotes-section {
+        height: 50rem;
+    }
+}
