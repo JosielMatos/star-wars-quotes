@@ -8,6 +8,7 @@ MongoClient.connect(process.env.connectionString, {useUnifiedTopology: true})
     console.log('Connected to Database')
     const db = client.db('star-wars-quotes')
     const quotesCollection = db.collection('quotes')
+    const port = process.env.PORT || 3000
 
     app.set('view engine', 'ejs')
 
@@ -60,8 +61,8 @@ MongoClient.connect(process.env.connectionString, {useUnifiedTopology: true})
         }).catch(error => console.error(error))
     })
 
-    app.listen(3000, function() {
-        console.log('listening on 3000')
+    app.listen(port, function() {
+        console.log(`listening on ${port}`)
     })
 }).catch(error => console.error(error))
 
