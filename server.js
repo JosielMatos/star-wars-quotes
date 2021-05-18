@@ -3,7 +3,7 @@ const app = express();
 const MongoClient = require('mongodb').MongoClient
 require('dotenv').config()
 
-MongoClient.connect(process.env.connectionString, {useUnifiedTopology: true})
+MongoClient.connect(process.env.DB_STRING, {useUnifiedTopology: true})
 .then(client => {
     console.log('Connected to Database')
     const db = client.db('star-wars-quotes')
